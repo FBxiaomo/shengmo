@@ -19,14 +19,13 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '22'
           cache: 'npm'
-          cache-dependency-path: package-lock.json
       
       - name: Setup Rust
         uses: dtolnay/rust-toolchain@stable
         with:
-          toolchain: 1.77.0
+          toolchain: stable
           targets: aarch64-apple-darwin,x86_64-apple-darwin
       
       - name: Cache Rust dependencies
@@ -35,7 +34,7 @@ jobs:
           workspaces: "./src-tauri"
       
       - name: Install frontend dependencies
-        run: npm ci
+        run: npm install
       
       - name: Build macOS app
         env:
