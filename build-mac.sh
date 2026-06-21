@@ -10,7 +10,7 @@
 
 set -euo pipefail
 
-cd "$(dirname "$0")/.."
+cd "$(dirname "$0")"
 
 APP="src-tauri/target/release/bundle/macos/OpenLess.app"
 INFO="$APP/Contents/Info.plist"
