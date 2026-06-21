@@ -12,9 +12,9 @@ set -euo pipefail
 
 cd "$(dirname "$0")"
 
-APP="src-tauri/target/release/bundle/macos/OpenLess.app"
+APP="target/release/bundle/macos/OpenLess.app"
 INFO="$APP/Contents/Info.plist"
-DMG_DIR="src-tauri/target/release/bundle/dmg"
+DMG_DIR="target/release/bundle/dmg"
 INSTALL="${INSTALL:-1}"
 
 if [ -z "${APPLE_CERTIFICATE:-}" ] && [ -z "${APPLE_SIGNING_IDENTITY:-}" ]; then
