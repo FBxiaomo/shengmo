@@ -1,8 +1,14 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
+import { resolve } from 'path';
 
 export default defineConfig({
   plugins: [react()],
+  resolve: {
+    alias: {
+      '@android': resolve(__dirname, 'src/android-stubs'),
+    },
+  },
   clearScreen: false,
   server: {
     port: 1420,
